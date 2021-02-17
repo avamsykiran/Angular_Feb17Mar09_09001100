@@ -1,0 +1,146 @@
+GitURL: https://github.com/avamsykiran/Angular_Feb17Mar09_09001100.git
+
+Pre-requisites
+------------------------
+    1. Javascript (ES6)
+        Core Javascript Objects
+        Functions are also objects
+        Arrow Functions, IIFE 
+        Sugar Syntax
+            template leterals
+            multi-line strings
+            destructured assignments
+        Array functions
+        Array prototype functions
+        Object Functions
+        Spread Operator
+    
+    2. Node JS
+        Javascript runtime enviroment
+        npm 
+        node project structure.
+
+Enviroment
+-------------------------
+    NodeJS                  https://nodejs.org/en/
+                            node -v
+    
+    NPM                     npm -v
+
+    Angular CLI             npm install -g @angular/cli
+                            ng --version
+    
+    Visual Studio Code      https://code.visualstudio.com/download
+
+Node JS
+------------------------------------
+
+    is a runtime or execution platform for Javascript.
+
+    node        
+    npm     node package manager
+
+            package is any Javascript library
+
+    Create a node project:  npm init -y
+
+
+Angular
+------------------------------------------
+
+    AngularJS 1   
+
+            Developed on javascript
+            Used only with javascript
+
+    Angular 2 to  Angular 11
+
+            Developed on javascript
+            Used only with javascript and typescript
+            It is recomemded to be used on typescript.
+
+        Typescript = Javascript + Data Types (Type Safty)
+
+        Brower can not understand typescript
+        Hence we have to transcript (compile) typescript into javascript
+        before we execute it on the Brower.
+
+        babel       is mostly used for typescript to javascript compilation.
+
+    Angular is used for developing SPA (client side application).
+
+    SPA - Single Page Application.
+
+    Angular applications are not executed on node.
+    But they are developed on node platform.
+
+    For the sake of
+        package management
+        compilation
+        building distructable bundles
+        testing
+    we develop on node platform.
+
+    once bundled, the bundle execute on browser.
+
+
+    Creating an angular application on node
+
+    1. create a project folder
+    2. create a project using npm init -y
+    3. install all libraries usign npm install
+            angular core libraries
+            bebel
+            grun/gulp for project life cycle management
+            karma for test execution
+            jasmine for wrting test cases
+            ................and other libraries
+
+    Angular CLI comes to rescue
+
+    Angular CLI
+    --------------------------------------------
+    Command line interface
+
+        helps in creating a new angular project 
+        with all required configuarations and installations.
+
+        helps in crating angular building blocks.
+
+
+        ng new projectName
+
+        ng serve --port 4200 -o
+
+                   starts the live angular development server
+                            1. it compile all the existing typescript to javascript
+                            2. the compiled code is not stored anywhere bu tis palce in-memory
+                            3. it serves the code to the broser whenevr requested.
+                            4. it monitors the angualr file and 
+                                    any modification to any angular file
+                                    will trigger the recompilation and restart of the servr.
+
+        
+        ng build            builds the distructable files 
+
+                            1. it compile all the existing typescript to javascript
+                            2. it stores the compiled code in the 'dist' folder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
