@@ -127,7 +127,199 @@ Angular
                             2. it stores the compiled code in the 'dist' folder.
 
 
+        ng g component ComponentName
+        ng g directive DirectiveName
+        ng g pipe PipeName
+        ng g service ServiceName
+        ng g module ModuleName
+        ng g class ClassName
+        
 
+
+Day 2
+---------------------------------------------------------------------------------------------
+
+    SPA?
+
+            Single Page Application
+
+            1. These application have one and only page (html docuemnt) .
+            2. This page is composed of different 
+                dynamically loadable and replaceble sections called COMPONENTS.
+            
+
+            DataServer <---> WebServer <----------URL---------- Client
+                                        --html,css,javascript----> old page must unlaod
+                                                                and a new page must reload.
+
+                                                                
+            DataServer <---> WebServer                                 
+                                |   
+                                |- UI app      <----First Req               Client
+                                |    ----A bundle of JS,CSS + index.html---->
+                                |
+                                |- Rest API      <----rest api request
+                                                -------Data in JSON/XML ----->
+
+
+    Angular Achetecture (Buidling Blocks) ?
+
+            The SPA framewworks/libraries like angular
+            add extandability to HTML.
+
+            We can create and use our own HTML elements and attributes.
+
+            Modules
+
+                    Logical group of Directives,Components,Pipes,Service and
+                    other modules.
+
+                    Root Module
+                        Every Angular Application must be inside
+                        on single module called Root Module.
+
+                    Feature Module
+
+                        Inside the root module 
+                        we can include any otehr sub-modules called Feature Modules
+
+                    @NgModule({
+
+                    })
+                    class MyModule {
+
+                    }
+
+            Directives
+
+                    Are the one that add extendability to HTML.
+
+                    Component Directives    in short known as Component
+                            Each component is a user defiend HTML Tag (Element).
+
+                    Attributes Directives   in short known as Directive
+                            Each Directive is a user defiend HTML Attribute.
+
+                        Structural Directives
+
+                            ngIf
+                            ngSwitch
+                            ngFor
+
+                        Event Directives
+
+                            click
+                            dblClick
+                            blur
+                            ....etc
+
+                        Built-In Directives
+
+                            ngModel
+                            ngForm
+                            readonly
+                            routeLink
+                            ...etc
+                        
+                        Custome Attribute Directives
+
+                            @Directive({
+
+                            })
+                            class MyDirective{
+
+                            }
+
+
+            Components      (Component Directives)
+
+                    Each component is a user defiend HTML Tag (Element).
+
+                    Component = Template + Controller
+
+                    BuiltIn Components
+                        <ng-tempalte></ng-tempalte>
+                        <ng-content></ng-content>
+                        <ng-container></ng-container>
+                        <router-outlet></router-outlet>
+                        ...etc
+
+
+                    Custome Component
+                    ---------------------------
+
+                    my.component.ts  (controller)
+
+                    @Component({
+                        selector:'my-tag',
+                        templateUrl:'my.component.html'
+                    })
+                    class MyComponent{
+                        
+                        friends = ["Vamsy","Sunitha","Ram"];
+
+                    }
+
+                    my.component.html (template)
+                        <ul>
+                            <li *ngFor="let fnm of friends">{{fnm}}</li>
+                        </ul>
+
+
+                    <html>
+                        <body>
+                            <my-tag></my-tag>
+                        </body>
+                    </html>
+
+
+                    <html>
+                        <body>
+                           <ul>
+                            <li>Vamsy</li>
+                            <li>Sunitha</li>
+                            <li>Ram</li>
+                           </ul>
+                        </body>
+                    </html>
+
+
+            Pipes
+
+                    used for tranforming a given input into 
+                    a differnt format
+
+                    ButilIn Pipes
+                    -----------------
+
+                        lowercase
+                        uppercase
+                        number
+                        percent
+                        currency
+                        date
+                        json
+                        async
+
+                    Custome Pipes
+                    ---------------
+                    @Pipe({
+
+                    })
+                    class MyPipe{
+
+                    }
+
+            Services
+
+                    is a class that holds bussiness logic / api communication logic
+
+                    @Injectable({
+
+                    })
+                    class MyService{
+
+                    }
 
 
 
