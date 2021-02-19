@@ -1,0 +1,21 @@
+section{
+    background-color: #aaaaaa;
+    padding:10px;
+}
+
+form{
+    margin-bottom: 15px;
+}
+
+.bordered{
+    border: 2px solid black;
+}
+
+.roundCorners{
+    border-radius: 10px;
+}
+
+.pullCenter{
+    display:block;    
+    margin:0px auto;
+}

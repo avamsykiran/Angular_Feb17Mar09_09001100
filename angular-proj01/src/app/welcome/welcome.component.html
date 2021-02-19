@@ -1,0 +1,27 @@
+<section>
+    <h2>{{message}}</h2>
+
+    <form>
+        <input type="text" name="t1" 
+        [(ngModel)]="message" />
+
+        <input type="range" name="r1" [(ngModel)]="imgWidth"
+        min="50" max="500" />
+
+        <label>
+            <input type="checkbox" name="ch1" [(ngModel)]="isBordered" />Apply Border
+        </label>
+        <label>
+            <input type="checkbox" name="ch2" [(ngModel)]="isRoundCornered" />Apply Round Corners
+        </label>
+        <label>
+            <input type="checkbox" name="ch3" [(ngModel)]="isCentered" />Apply Center
+        </label>
+    </form>
+
+    <img [src]="logo" 
+            [class]="{bordered:isBordered,roundCorners:isRoundCornered,pullCenter:isCentered}"    
+            [style.width.pt]="imgWidth" 
+            (dblclick)="onImageDoubleClick()"/>
+        
+</section>

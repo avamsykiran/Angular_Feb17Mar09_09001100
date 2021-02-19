@@ -1,0 +1,42 @@
+<section>
+    <h3> Pipes Demo</h3>
+
+    <p>
+        Original:<strong>{{str}}</strong>  <br />
+        Lower Case:<strong>{{str|lowercase}}</strong>  <br />
+        Upper Case:<strong>{{str|uppercase}}</strong>  
+    </p>
+
+    <p>
+        Original:<strong>{{num}}</strong>  <br />
+        <strong>{{num|number:'1.3-6'}}</strong>  <br />
+        <strong>{{num|number:'1.0-0'}}</strong>  <br />
+        <strong>{{num|number:'5.0-0'}}</strong>  <br />
+        <strong>{{num|number:'4.2-3'}}</strong>  
+    </p>
+
+    <p>
+        Original:<strong>{{today}}</strong>  <br />
+        Short:<strong>{{today|date:'short'}}</strong>  <br />
+        Long:<strong>{{today|date:'long'}}</strong>  <br />
+        Custom:<strong>{{today|date:'dd-MM-yyyy'}}</strong>  <br />
+        Custom:<strong>{{today|date:'dd-MMM-yyyy'}}</strong>  <br />
+        Custom:<strong>{{today|date:'dd-MMMM-yyyy'}}</strong>  <br />
+        Custom:<strong>{{today|date:'dd-MMMM-yyyy hh:mm:ss aa'}}</strong>  <br />
+        Custom:<strong>{{today|date:'dd-MMMM-yyyy HH:mm:ss '}}</strong> 
+    </p>
+
+    <p>
+        Original:<strong>{{emp}}</strong> <br />
+        <strong>{{emp|json}}</strong>
+    </p>
+
+    <p>
+        Original:<strong>{{num}}</strong>  <br />
+        Indian Rupee: <strong>{{num|currency:'INR'}}</strong> <br />
+        US Dollar: <strong>{{num|currency:'USD'}}</strong> <br />
+        Australian Dollar: <strong>{{num|currency:'AUD'}}</strong> <br />
+        Great Britan Pound: <strong>{{num|currency:'GBP'}}</strong> <br />
+        Unknown: <strong>{{num|currency:'xyz'}}</strong> 
+    </p>
+</section>

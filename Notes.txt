@@ -321,6 +321,70 @@ Day 2
 
                     }
 
+Styling
+---------------------------------------------
+
+Global Styling
+
+        src/styles.css
+
+Component Level Local Styling
+
+        component specific css file
+
+Data Binding
+----------------------------------------------
+
+Binding Resources On Controller With Template
+
+    Interpolation
+
+        {{angular-expression}}
+
+    One-Way Binding
+
+        [attributeName]="angular-expression"
+        attributeName="value"
+
+        <img src="logo.png" />
+        <img [src]="logoFile" />
+
+    Two-Way Binding
+
+        ngModel     is an attribute directive that supports two way Binding.
+
+                    belongs to FormsModule
+
+        [(ngModel)]="variableName"
+
+    Event Binding
+
+        Event Attribute Directive  = HtmlEventAttribute - "on"
+
+        (eventAttributeName)="angualrFunction()"
+
+    Style Binding
+
+        [style.styleProperty]="variable"
+
+        switching a css class:
+
+                [class]="{className:true/false,class2Name:true/false}"
+
+  Pipes
+  -------------------------------------------------------
+
+                        lowercase
+                        uppercase
+                        number
+                        percent
+                        currency
+                        date
+                        json
+                        async
+
+
+
 
 
 
