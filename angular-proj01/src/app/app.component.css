@@ -3,3 +3,18 @@ header{
     text-align: center;
     background-color: #f0a00f;
 }
+
+nav{
+    padding:10px;
+    background-color: #f00f0f;
+}
+
+nav a{
+    background-color: #0ff0f0;
+    padding:10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    display: inline-block;
+    margin:2px;
+    text-decoration: none;
+}

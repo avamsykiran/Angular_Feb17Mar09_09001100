@@ -384,6 +384,35 @@ Binding Resources On Controller With Template
                         async
 
 
+    Routing
+    -------------------------------------------------------
+
+        is render a specific component 
+        based on the given URL.
+
+        http://localhost:5656           Component0
+        http://localhost:5656/c1        Component1
+        http://localhost:5656/c2        Component2
+        http://localhost:5656/c3        Component3
+
+        RouterModule from /router
+        
+        <router-outlet></router-outlet> is a buitl-in component that acts like a placeholder
+
+        Define Routes which is an array of Route; and each 
+        Route  has the below properties
+            path
+            pathMatch
+            component
+            children
+            ......
+
+        routerLink is a attribute directive used on <a></a> to specify the link.
+        
+    Service:
+    --------------------------------------------------------
+    
+
 
 
 

@@ -1,0 +1,54 @@
+<section>
+    <h3>Employee form</h3>
+
+    <form>
+        <div>
+            <label>Employee id</label>
+            <input type="number" name="eid" [(ngModel)]="emp.empId"/>
+        </div>
+        <div>
+            <label>Full Name</label>
+            <input type="text" name="fnm" [(ngModel)]="emp.fullName"/>
+        </div>
+        <div>
+            <label>Designation</label>
+            <select name="dg" [(ngModel)]="emp.designation">
+                <option value="">----SELECT-----</option>
+                <option *ngFor="let d of desgs" [value]="d[0]">{{d[1]}}</option>
+            </select>
+        </div>
+        <div>
+            <label>Basic</label>
+            <input type="decimal" name="bsc" [(ngModel)]="emp.basic"/>
+        </div>
+        <div>
+            <label>
+            <input type="checkbox" name="oc" [(ngModel)]="emp.officeCommute"/>
+            Shall use office commute
+            </label>
+        </div>
+        <div *ngIf="emp.officeCommute">
+            <label>Pickup Location</label>
+            <input type="text" name="pl" [(ngModel)]="emp.pickupLocation"/>
+        </div>
+        <div>
+            <p [ngSwitch]="emp.designation">
+                <strong>Travel Charges: </strong>
+                INR . 
+                <span *ngSwitchCase="''">0</span>                
+                <span *ngSwitchCase="'MGR'">10</span>                
+                <span *ngSwitchCase="'TL'">15</span>                
+                <span *ngSwitchCase="'ASS'">25</span>                
+                <span *ngSwitchCase="'TRN'">30</span>                
+                per KM
+            </p>
+        </div>
+        <div>
+            <button>SAVE</button>
+        </div>
+    </form>
+
+    <div>
+        <strong>{{emp|json}}</strong>
+    </div>
+</section>
