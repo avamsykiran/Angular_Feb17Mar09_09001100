@@ -1,0 +1,59 @@
+
+<div class="col-sm-4 mx-auto">
+
+    <h3>New Tariff Plan</h3>
+
+    <form class="form" (ngSubmit)="addTariff()" #f="ngForm">
+        <div class="form-group">
+            <label class="form-control-label">Plan Id</label>
+            <input type="number" name="pid"
+             class="form-control" [(ngModel)]="tariff.planId"
+             #pid="ngModel" required
+             />
+             <div class="alert alert-danger" *ngIf="pid.invalid && (pid.dirty || pid.touched)">
+                <p>This field is mandate</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label">Title</label>
+            <input type="text" name="title" class="form-control"
+             [(ngModel)]="tariff.title"
+             #title="ngModel" required minlength="5" maxlength="150"
+             />
+             <div class="alert alert-danger" *ngIf="title.invalid && (title.dirty || title.touched)">
+                <p *ngIf="title.errors.required">This field is mandate</p>
+                <p *ngIf="title.errors.minlength">Minimum 5 chars are expected</p>
+                <p *ngIf="title.errors.maxlength">Maximum 150 chars are allowed</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label">Cost</label>
+            <input type="decimal" name="cost" class="form-control" 
+            [(ngModel)]="tariff.cost"
+            #cost="ngModel" required
+            />
+            <div class="alert alert-danger" *ngIf="cost.invalid && (cost.dirty || cost.touched)">
+               <p>This field is mandate</p>
+           </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label">Validity</label>
+            <input type="number" name="vdt" class="form-control" 
+            [(ngModel)]="tariff.validity"
+            #v="ngModel" required
+            />
+            <div class="alert alert-danger" *ngIf="v.invalid && (v.dirty || v.touched)">
+               <p>This field is mandate</p>
+           </div>
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-warning mr-2" (click)="goBack()">
+                Cancel
+            </button>
+            <button class="btn btn-primary" [disabled]="f.invalid">
+                Add Plan
+            </button>
+        </div>
+    </form>
+
+</div>

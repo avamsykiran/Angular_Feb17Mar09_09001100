@@ -409,10 +409,53 @@ Binding Resources On Controller With Template
 
         routerLink is a attribute directive used on <a></a> to specify the link.
         
+        Router   is a service used to navigate programatically.
+                .navigateBy?Url("destinationUrl");
+                .navigate([anArrayOfURLSegments],{qryPArams,routeParams});
+
     Service:
     --------------------------------------------------------
-    
 
+        Service is a class that 
+        offers bussiness logic,
+
+        Service is injectables in angular.
+        Service can be injected into a component,pipe, or a directive.
+
+        @Injectable({
+            providedIn:'root'
+        })
+        export class MyService{
+
+        }   
+
+/....../
+        constructor(private obj:MyService){
+
+        }
+
+
+
+    Component LifeCycle Hooks
+    -------------------------------------------
+
+    LifeCycle                       Hooks
+
+    At the time of loading:         ngOnChanges
+                                    ngOnInit
+                                    ngDoCheck
+
+     compoennt data binding         ngOnChanges    
+     might change                   ngDoCheck
+                                    
+
+     Content Initialization         ngAfterContnetInit    
+                                    ngAfterContnetChecked    
+
+     Child View Initialization      ngAfterViewInit
+                                    ngAfterViewChecked
+
+     Destroy                        ngOnDestroy    
 
 
 

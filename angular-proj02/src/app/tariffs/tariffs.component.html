@@ -1,0 +1,21 @@
+
+<h3>Tariff Plans</h3>
+
+<table class="table table-stripped table-bordered">
+    <thead>
+        <tr>
+            <th>Plan Id</th>
+            <th>Title</th>
+            <th>Cost</th>
+            <th>Validity (in days)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of tariffs">
+            <td class="text-right">{{t.planId}}</td>
+            <td>{{t.title}}</td>
+            <td class="text-right">{{t.cost}}</td>
+            <td class="text-right">{{t.validity}}</td>
+        </tr>
+    </tbody>
+</table>
