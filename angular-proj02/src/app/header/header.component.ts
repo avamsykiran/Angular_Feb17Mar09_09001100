@@ -13,10 +13,11 @@ export class HeaderComponent {
     this.links = [
       {link:"/",label:"Home"},
       {link:"/tariffs",label:"Tariff Plans"},
-      {link:"/addTariff",label:"New Tariff Plan"}
+      {link:"/addTariff",label:"New Tariff Plan"},
+      {link:"/consumers",label:"Consumers"},
+      {link:"/addConsumer",label:"New Consumer"}
     ];
   }
-
 }
 
 class Link{

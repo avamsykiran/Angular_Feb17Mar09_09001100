@@ -458,7 +458,33 @@ Binding Resources On Controller With Template
      Destroy                        ngOnDestroy    
 
 
+Template Driven Forms
+----------------------------------------
 
+    1. form are crated in template and we bind them
+        using ngModel.
+
+    2. FormsModule
+
+    3. is ok for simple forms, but not suggested for complex forms.
+
+    4. it is not to test a template driven form.
+
+    5. limited validations and limited for data binding.   
+
+Model Driven Forms / Reactive Forms
+-----------------------------------------
+
+    1. ReactiveFormsModule
+
+    2. The form model is constructed on controller, and 
+        then the form control are boudn to template.
+
+    3. Less on the template.
+
+    4. great support for validations and Custom validations.
+
+    5. suggested to work with complex forms.
 
 
 

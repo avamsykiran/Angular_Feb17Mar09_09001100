@@ -22,6 +22,10 @@ export class TariffPlanService {
      return this.tariffs;
    }
 
+   getById(id:number){
+    return this.tariffs.find((t) => (t.planId===id));
+   }
+
    add(tariff:TariffPlan){
      this.tariffs.push(tariff);
    }
