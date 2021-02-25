@@ -1,0 +1,27 @@
+<div class="border border-dark m-3 p-3">
+    <form class="form-inline" (ngSubmit)="startSeries()"> 
+        <label class="form-label">Lower Limit:</label>
+        <input type="number" name="lb" class="form-control mr-2" [(ngModel)]="lb" />
+        <label class="form-label">Upper Limit:</label>
+        <input type="number" name="ub" class="form-control mr-2" [(ngModel)]="ub" />
+        
+        <label class="form-check-label mr-2">
+            <input type="checkbox" name="c1" class="form-check-control" [(ngModel)]="evens"/>
+            Evens
+        </label>
+
+        <label class="form-check-label mr-2">
+            <input type="checkbox" name="c2" class="form-check-control" [(ngModel)]="sqrs"/>
+            Squares
+        </label>
+        
+        <button class="btn btn-sm btn-primary" [disabled]="!isComplete">GENERATE</button>
+    </form>
+
+    <div class="border border-3 p-3 mt-3">
+        <p *ngIf="errMsg">{{errMsg}}</p>
+        <p *ngIf="results">
+            <span *ngFor="let n of results">{{n}}, </span>
+        </p>
+    </div>
+</div>

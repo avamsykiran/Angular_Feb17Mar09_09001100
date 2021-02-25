@@ -15,7 +15,8 @@ export class HeaderComponent {
       {link:"/tariffs",label:"Tariff Plans"},
       {link:"/addTariff",label:"New Tariff Plan"},
       {link:"/consumers",label:"Consumers"},
-      {link:"/addConsumer",label:"New Consumer"}
+      {link:"/addConsumer",label:"New Consumer"},
+      {link:"/obdemo",label:"Observables Demo"}
     ];
   }
 }

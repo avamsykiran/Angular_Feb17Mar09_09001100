@@ -486,6 +486,67 @@ Model Driven Forms / Reactive Forms
 
     5. suggested to work with complex forms.
 
+Asynchronous Programming
+-----------------------------------
+
+    setTimeout
+    setInterval
+
+Reactive Programming
+---------------------------
+
+    the asynchronous jobs will have to notify the UI
+    that the job is done or aborted. And the UI shall react to the the notification.
+
+    Promise is a class the asures the UI that he will get back once the job is done or aborted.
+
+    let job = (resolve,reject) => {
+            ...code our job.....
+
+            if(job is compelted)
+                resolve(results); //signal successful completion
+            else {
+                reject(err); //signal the abortion
+            }    
+    };
+
+    let p = new Promise(job); // the 'then' method when called will execute the job.
+
+    p.then(
+        (result) -> { }, //is called when the resolve signal is emited
+        (err) -> { }, //is called when the rejct signal is emited.
+    );
+
+RxJS
+-----------------------------------------
+
+    Reactive JS
+
+    Observable is an enchanced Promise.
+
+    + one Observable can be subscribed by mor than one segments.
+    + we can unsubscribe to an Observable
+    + we can produce continouse resutls even before the job is complete.
+
+    const job = (observer) =>{
+        ...cdoe of the job....
+
+        observer.next(value); //used to emit a value 
+        observer.error(err); //signals the abortion due to err 
+        observer.complete(); //signal completion.
+    }
+
+    let ob = new Observable(job); //job exectue when we subscribe.
+
+    ob.subscribe(
+        (value) => {}, //responds to the next()
+        (err) => {}, //respond on error
+        () => {} //respond on completion
+    );
+
+
+
+
 
 
 

@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { TariffFormComponent } from './tariff-form/tariff-form.component';
 import { ConsumersComponent } from './consumers/consumers.component';
 import { ConsumerFormComponent } from './consumer-form/consumer-form.component';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
+import { SeriesComponent } from './series/series.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ConsumerFormComponent } from './consumer-form/consumer-form.component';
     HomeComponent,
     TariffFormComponent,
     ConsumersComponent,
-    ConsumerFormComponent
+    ConsumerFormComponent,
+    ObservableDemoComponent,
+    SeriesComponent
   ],
   imports: [
     BrowserModule,
