@@ -1,0 +1,15 @@
+<header class="jumbotron mb-0">
+    <h2>
+        Mobile Recharge Portal
+        <small>..an example of using angular services and routing...</small>    
+    </h2>
+</header>
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+    <a href="#" class="navbar-brand">MRP</a>
+
+    <ul class="navbar-nav">
+        <li class="nav-item" *ngFor="let l of links">
+            <a class="nav-link" [routerLink]="l.link">{{l.label}}</a>
+        </li>
+    </ul>
+</nav>

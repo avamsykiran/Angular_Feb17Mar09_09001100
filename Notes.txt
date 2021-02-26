@@ -544,6 +544,33 @@ RxJS
         () => {} //respond on completion
     );
 
+json-server
+--------------------------------
+
+ is a javascript library
+ used to compose fake rest api.
+
+ should be supplied witha a json file
+ containing all json data, And
+ each entity is identified by an 'id'.
+
+
+HttpClient
+-------------------------------------------------
+
+    HttpClientModule            @angular/commons/http
+        
+        HttpClient          in-built service
+
+            get(url)                Observable
+            post(url,reqeustBody)   Observable
+            put(url,requestBody)    Observable    
+            delete(url)             Observable    
+
+
+
+
+
 
 
 

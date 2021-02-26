@@ -1,0 +1,71 @@
+<div class="col-sm-5 mx-auto">
+    <form class="form" [formGroup]="conForm" (ngSubmit)="addConsumer()">
+        <div class="form-group">
+            <label class="form-label">
+                Consumer Id:
+            </label>
+            <input type="number" formControlName="consumerId" class="form-control" />
+            <div class="alert alert-danger" *ngIf="consumerId.invalid && (consumerId.dirty || consumerId.touched)">
+                <span *ngIf="consumerId.errors.required">This field is mandate</span>
+                <span *ngIf="consumerId.errors.min">Negative Values are not expected</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">
+                User Id:
+            </label>
+            <input type="text" formControlName="userId" class="form-control" />
+            <div class="alert alert-danger" *ngIf="userId.invalid && (userId.dirty || userId.touched)">
+                <span *ngIf="userId.errors.required">This field is mandate</span>
+                <span *ngIf="userId.errors.minlength">Atleast three chars expected</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">
+                Full Name:
+            </label>
+            <input type="text" formControlName="fullName" class="form-control" />
+            <div class="alert alert-danger" *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
+                <span *ngIf="fullName.errors.required">This field is mandate</span>
+                <span *ngIf="fullName.errors.minlength">Atleast three chars expected</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">
+                Location:
+            </label>
+            <input type="text" formControlName="location" class="form-control" />
+            <div class="alert alert-danger" *ngIf="location.invalid && (location.dirty || location.touched)">
+                <span *ngIf="location.errors.required">This field is mandate</span>
+                <span *ngIf="location.errors.minlength">Atleast three chars expected</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">
+                Mobile Number:
+            </label>
+            <input type="text" formControlName="mobileNumber" class="form-control" />
+            <div class="alert alert-danger" *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)">
+                <span *ngIf="mobileNumber.errors.required">This field is mandate</span>
+                <span *ngIf="mobileNumber.errors.pattern">A ten digit number expected</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">
+                Plan:
+            </label>
+            <select formControlName="planId" class="form-control" >
+                <option value="">----SELECT----</option>
+                <option *ngFor="let p of plans" [value]="p.planId">{{p.title}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="planId.invalid && (planId.dirty || planId.touched)">
+                <span>This field is mandate</span>                
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" [disabled]="conForm.invalid">
+                Add Consumer
+            </button>
+        </div>
+    </form>
+</div>
