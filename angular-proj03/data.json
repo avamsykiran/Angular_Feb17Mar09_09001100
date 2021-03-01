@@ -1,9 +1,49 @@
 {
-    "tariffs":[
-        {"id":101,"title":"30 Day topup","cost":345,"validity":30},
-        {"id":102,"title":"60 Day full-talk","cost":888,"validity":60},
-        {"id":103,"title":"30 Day full-talk","cost":444,"validity":30},
-        {"id":104,"title":"60 Day topup","cost":645,"validity":60},
-        {"id":105,"title":"75 Day topup","cost":975,"validity":75}
+  "tariffs": [
+    {
+      "id": 101,
+      "title": "30 Day topup",
+      "cost": 345,
+      "validity": 30
+    },
+    {
+      "id": 102,
+      "title": "60 Day full-talk",
+      "cost": 888,
+      "validity": 60
+    },
+    {
+      "id": 103,
+      "title": "30 Day full-talk",
+      "cost": 444,
+      "validity": 30
+    },
+    {
+      "id": 104,
+      "title": "60 Day topup",
+      "cost": 645,
+      "validity": 60
+    },
+    {
+      "id": 105,
+      "title": "75 Day topup",
+      "cost": 975,
+      "validity": 75
+    }
+  ],
+  "consumers":[
+    {
+      "id":1,
+      "userId":"vamsy",
+      "fullName":"Vamsy Kiran A",
+      "location":"Andhra Pradesh",
+      "accounts":[
+        {
+          "id":1,
+          "mobileNumber":"9052224753",
+          "planId":101  
+        }
       ]
+    }
+  ]
 }

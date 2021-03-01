@@ -413,6 +413,22 @@ Binding Resources On Controller With Template
                 .navigateBy?Url("destinationUrl");
                 .navigate([anArrayOfURLSegments],{qryPArams,routeParams});
 
+
+        Path Parameters
+        ---------------------------
+            : is used to represent a path param.
+
+            /abc/:name      'abc' is the url-segment and :name is a param
+
+            http://localhost:5656/abc/vamsy
+            http://localhost:5656/abc/Kiran
+
+            ActivatedRoute is a inbuilt service that
+            provides varioaus data about the current url.
+
+                    params      is a observable the gives
+                                all path params.
+
     Service:
     --------------------------------------------------------
 

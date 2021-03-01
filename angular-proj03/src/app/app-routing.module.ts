@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'',pathMatch:'full',component:HomeComponent},
   {path:'tariffs',component:TariffsComponent},
   {path:'addTariff',component:TariffFormComponent},
+  {path:'editTariff/:id',component:TariffFormComponent},
   {path:'consumers',component:ConsumersComponent},
   {path:'addConsumer',component:ConsumerFormComponent}
 ];

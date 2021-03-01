@@ -1,14 +1,14 @@
 
 <div class="col-sm-4 mx-auto">
 
-    <h3>New Tariff Plan</h3>
+    <h3>{{isNew?"New":"Edit"}} Tariff Plan</h3>
 
-    <form class="form" (ngSubmit)="addTariff()" #f="ngForm">
+    <form class="form" (ngSubmit)="formSubmited()" #f="ngForm">
         <div class="form-group">
             <label class="form-control-label">Plan Id</label>
             <input type="number" name="pid"
-             class="form-control" [(ngModel)]="tariff.planId"
-             #pid="ngModel" required
+             class="form-control" [(ngModel)]="tariff.id"
+             #pid="ngModel" required [readonly]="!isNew"
              />
              <div class="alert alert-danger" *ngIf="pid.invalid && (pid.dirty || pid.touched)">
                 <p>This field is mandate</p>
@@ -51,9 +51,8 @@
                 Cancel
             </button>
             <button class="btn btn-primary" [disabled]="f.invalid">
-                Add Plan
+                {{isNew?"Add Plan":"Save Plan"}}
             </button>
         </div>
     </form>
-
 </div>

@@ -12,6 +12,7 @@
             <th>Title</th>
             <th>Cost</th>
             <th>Validity (in days)</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,14 @@
             <td>{{t.title}}</td>
             <td class="text-right">{{t.cost}}</td>
             <td class="text-right">{{t.validity}}</td>
+            <td>
+                <a [routerLink]="['/editTariff',t.id]" class="btn btn-sm">
+                    <i class="fa fa-pencil"></i> EDIT
+                </a>
+                <button class="btn btn-sm" (click)="deleteTariff(t.id)">
+                    <i class="fa fa-trash"></i> DELETE
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

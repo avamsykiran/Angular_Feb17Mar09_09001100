@@ -1,7 +1,7 @@
 import { Account } from "./account";
 
 export class Consumer {
-    consumerId?:number;
+    id?:number;
     userId?:string;
     fullName?:string;
     location?:string;

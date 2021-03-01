@@ -17,10 +17,19 @@ export class TariffsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(){
     this.tariffService.getAll().subscribe(
       data => this.tariffs=data,
       err =>  {console.log(err); this.err="Sorry! Data could not be loaded,Retry later";}
     );
   }
 
+  deleteTariff(id:number){
+    this.tariffService.remove(id).subscribe(
+      () => { this.loadData(); }
+    );
+  }
 }

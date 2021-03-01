@@ -1,20 +1,26 @@
-
 <h3>Consumers </h3>
+
+<p class="alert alert-danger" *ngIf="errMsg">
+    <strong>{{errMsg}}</strong>
+</p>
 
 <div class="card-columns mr-5 p-2">
     <div class="card card-info" *ngFor="let c of consumers">
         <div class="card-header">
-            Consumer#{{c.consumerId}}
+            Consumer#{{c.id}}
         </div>
         <div class="card-body">
-            <em>Name: </em> <strong>{{c.fullName}}</strong> <br/>
-            <em>Location:</em><strong>{{c.location}}</strong> <br/>
+            <em>Name: </em> <strong>{{c.fullName}}</strong> <br />
+            <em>Location:</em><strong>{{c.location}}</strong> <br />
             <em>Accounts: </em> <strong>{{c.accounts.length}}</strong>
         </div>
         <div class="card-footer text-right">
-            <a href="#" class="btn btn-sm btn-primary">
-                MORE DETAILS
-            </a>            
+            <a href="#" class="btn btn-sm btn-primary mr-3">
+                <i class="fa fa-pencil"></i>Edit
+            </a>
+            <button class="btn btn-sm btn-danger">
+                <i class="fa fa-trash"></i>Delete
+            </button>
         </div>
     </div>
 </div>

@@ -10,12 +10,16 @@ import { ConsumerService } from '../service/consumer.service';
 export class ConsumersComponent implements OnInit {
 
   consumers:Consumer[];
+  errMsg:string;
   constructor(private conSerivce:ConsumerService) {
     this.consumers=[];
   }
 
   ngOnInit(): void {
-    this.consumers=this.conSerivce.getAll();
+    this.conSerivce.getAll().subscribe(
+      (data)=>{this.consumers=data;},
+      (err)=>{ this.errMsg=err;}
+    );
   }
 
 }
