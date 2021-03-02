@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccountsComponent } from './accounts/accounts.component';
 
 import { ConsumerFormComponent } from './consumer-form/consumer-form.component';
 import { ConsumersComponent } from './consumers/consumers.component';
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path:'addTariff',component:TariffFormComponent},
   {path:'editTariff/:id',component:TariffFormComponent},
   {path:'consumers',component:ConsumersComponent},
-  {path:'addConsumer',component:ConsumerFormComponent}
+  {path:'addConsumer',component:ConsumerFormComponent},
+  {path:'editConsumer/:id',component:ConsumerFormComponent},
+  {path:'viewAccounts/:id',component:AccountsComponent}
 ];
 
 @NgModule({

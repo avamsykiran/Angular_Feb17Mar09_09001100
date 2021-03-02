@@ -1,0 +1,24 @@
+<form (ngSubmit)="formSubmited()">
+<div class="row border p-2">
+        <div class="col-sm-2">
+            <em>id auto-gnerated</em>
+        </div>
+        <div class="col-sm-3">
+            <input type="text" name="mno" [(ngModel)]="account.mobileNumber"
+            class="form-control" placeholder="Mobile Number" 
+            required pattern="[1-9][0-9]{9}" />
+        </div>
+        <div class="col-sm-2">
+            <select class="form-control" name="pid" placeholder="Tariff Plan"
+            [(ngModel)]="account.planId">
+                <option value="0">----SELECT TARIFF---</option>
+                <option *ngFor="let p of plans" [value]="p.id">{{p.title}}</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-sm btn-primary">
+                <i class="fa fa-plus"></i> ADD
+            </button>
+        </div>
+</div>
+</form>

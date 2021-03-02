@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { TariffFormComponent } from './tariff-form/tariff-form.component';
 import { ConsumersComponent } from './consumers/consumers.component';
 import { ConsumerFormComponent } from './consumer-form/consumer-form.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
+import { AccountFormComponent } from './account-form/account-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ConsumerFormComponent } from './consumer-form/consumer-form.component';
     HomeComponent,
     TariffFormComponent,
     ConsumersComponent,
-    ConsumerFormComponent
+    ConsumerFormComponent,
+    AccountsComponent,
+    AccountDetailsComponent,
+    AccountFormComponent
   ],
   imports: [
     BrowserModule,

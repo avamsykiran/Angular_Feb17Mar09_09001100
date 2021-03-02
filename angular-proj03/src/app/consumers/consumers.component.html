@@ -15,11 +15,15 @@
             <em>Accounts: </em> <strong>{{c.accounts.length}}</strong>
         </div>
         <div class="card-footer text-right">
-            <a href="#" class="btn btn-sm btn-primary mr-3">
-                <i class="fa fa-pencil"></i>Edit
+            <a [routerLink]="['/viewAccounts',c.id]" class="btn btn-sm btn-info mr-2">
+                <i class="fa fa-user-circle"></i> View Accounts
             </a>
-            <button class="btn btn-sm btn-danger">
-                <i class="fa fa-trash"></i>Delete
+          
+            <a [routerLink]="['/editConsumer',c.id]" class="btn btn-sm btn-primary mr-2">
+                <i class="fa fa-pencil"></i> Edit
+            </a>
+            <button class="btn btn-sm btn-danger" (click)="deleteConsumer(c.id)">
+                <i class="fa fa-trash"></i> Delete
             </button>
         </div>
     </div>

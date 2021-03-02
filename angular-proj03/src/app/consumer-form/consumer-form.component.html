@@ -1,10 +1,10 @@
 <div class="col-sm-5 mx-auto">
-    <form class="form" [formGroup]="conForm" (ngSubmit)="addConsumer()">
+    <form class="form" [formGroup]="conForm" (ngSubmit)="formSubmited()">
         <div class="form-group">
             <label class="form-label">
                 Consumer Id:
             </label>
-            <input type="number" formControlName="consumerId" class="form-control" />
+            <input type="number" formControlName="consumerId" class="form-control" [readonly]="!isNew" />
             <div class="alert alert-danger" *ngIf="consumerId.invalid && (consumerId.dirty || consumerId.touched)">
                 <span *ngIf="consumerId.errors.required">This field is mandate</span>
                 <span *ngIf="consumerId.errors.min">Negative Values are not expected</span>
@@ -40,7 +40,7 @@
                 <span *ngIf="location.errors.minlength">Atleast three chars expected</span>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" *ngIf="isNew">
             <label class="form-label">
                 Mobile Number:
             </label>
@@ -50,13 +50,13 @@
                 <span *ngIf="mobileNumber.errors.pattern">A ten digit number expected</span>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" *ngIf="isNew">
             <label class="form-label">
                 Plan:
             </label>
             <select formControlName="planId" class="form-control" >
                 <option value="">----SELECT----</option>
-                <option *ngFor="let p of plans" [value]="p.planId">{{p.title}}</option>
+                <option *ngFor="let p of plans" [value]="p.id">{{p.title}}</option>
             </select>
             <div class="alert alert-danger" *ngIf="planId.invalid && (planId.dirty || planId.touched)">
                 <span>This field is mandate</span>                
@@ -64,7 +64,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary btn-block" [disabled]="conForm.invalid">
-                Add Consumer
+                {{isNew?"Add Consumer":"Save Consumer"}}
             </button>
         </div>
     </form>

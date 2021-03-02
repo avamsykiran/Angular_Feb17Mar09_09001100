@@ -1,0 +1,11 @@
+
+<h3>Accounts of <strong><em>{{consumer.fullName}}</em></strong> </h3>
+
+<div class="mt-3">
+    <app-account-form (onAddAccount)="addAccount($event)"></app-account-form>
+</div>
+
+<div class="mt-3">
+    <app-account-details *ngFor="let a of consumer.accounts" [account]="a">        
+    </app-account-details>
+</div>

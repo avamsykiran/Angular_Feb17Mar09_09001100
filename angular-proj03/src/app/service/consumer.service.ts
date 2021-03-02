@@ -61,7 +61,7 @@ export class ConsumerService {
 
   update(c: Consumer): Observable<Consumer> {
     return this.httpclient
-    .put<Consumer>(`${this.consumerApi}/${c.id}`, clientInformation)
+    .put<Consumer>(`${this.consumerApi}/${c.id}`, c)
     .pipe(
       catchError((err) => {
           console.log(err);
