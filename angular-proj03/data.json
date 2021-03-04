@@ -41,22 +41,12 @@
         {
           "id": 1,
           "mobileNumber": "9052224753",
-          "planId": "101"
+          "planId": "105"
         },
         {
           "id": 2,
-          "mobileNumber": "9948016441",
-          "planId": 0
-        },
-        {
-          "id": 3,
-          "mobileNumber": "8845010024",
-          "planId": 0
-        },
-        {
-          "id": 4,
-          "mobileNumber": "9550204458",
-          "planId": "103"
+          "mobileNumber": "8989898989",
+          "planId": "102"
         }
       ]
     },

@@ -8,4 +8,13 @@
     <div class="col-sm-2">
         Plan Id: <strong>{{account.planId}}</strong>
     </div>
+    <div class="col-sm-2">
+        <button class="btn btn-sm" (click)="edit()" >
+            <i class="fa fa-pencil"></i> Edit
+        </button>
+        <button class="btn btn-sm" (click)="delete()" [disabled]="!deletable">
+            <i class="fa fa-trash"></i> Delete
+        </button>
+        
+    </div>
 </div>

@@ -1,7 +1,8 @@
 <form (ngSubmit)="formSubmited()">
 <div class="row border p-2">
         <div class="col-sm-2">
-            <em>id auto-gnerated</em>
+            <input type="number" name="aid" [(ngModel)]="account.id"
+            class="form-control" readonly/>
         </div>
         <div class="col-sm-3">
             <input type="text" name="mno" [(ngModel)]="account.mobileNumber"
@@ -16,8 +17,14 @@
             </select>
         </div>
         <div class="col-sm-2">
-            <button class="btn btn-sm btn-primary">
+            <button class="btn btn-sm btn-primary" *ngIf="!isEditing">
                 <i class="fa fa-plus"></i> ADD
+            </button>
+            <button class="btn btn-sm" *ngIf="isEditing">
+                <i class="fa fa-save"></i> Save
+            </button>
+            <button class="btn btn-sm" *ngIf="isEditing" type="button" (click)="cancelEdit()">
+                <i class="fa fa-close"></i> Cancel
             </button>
         </div>
 </div>

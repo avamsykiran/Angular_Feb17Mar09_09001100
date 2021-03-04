@@ -1,11 +1,27 @@
 
 <h3>Accounts of <strong><em>{{consumer.fullName}}</em></strong> </h3>
 
-<div class="mt-3">
-    <app-account-form (onAddAccount)="addAccount($event)"></app-account-form>
-</div>
-
-<div class="mt-3">
-    <app-account-details *ngFor="let a of consumer.accounts" [account]="a">        
-    </app-account-details>
+<div class="col-sm-10">
+    <div class="mt-3">
+        <app-account-form (onAddAccount)="addAccount($event)"></app-account-form>
+    </div>
+    
+    <div class="mt-3">
+        <ng-container *ngFor="let a of consumer.accounts;let i=index;">
+            <app-account-details *ngIf="!isEditing[i]"
+            [account]="a"
+            [deletable]="isDeletable"
+            (onDelete)="deleteAccount($event)"
+            (onEdit)="editAccount($event)"
+            >        
+           </app-account-details>
+           <app-account-form *ngIf="isEditing[i]"
+           [account]="a"
+           isEditing="true"
+           (onUpdateAccount)="updateAccount($event)"
+           (onCancelEdit)="cancelEdit($event)"
+           ></app-account-form>
+        </ng-container>
+        
+    </div>
 </div>

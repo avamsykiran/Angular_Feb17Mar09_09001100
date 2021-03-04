@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Account } from '../model/account';
 import { TariffPlan } from '../model/tariff-plan';
 import { TariffPlanService } from '../service/tariff-plan.service';
@@ -10,36 +10,54 @@ import { TariffPlanService } from '../service/tariff-plan.service';
 })
 export class AccountFormComponent implements OnInit {
 
-  account:Account;
-  plans:TariffPlan[];
+  @Input()
+  account: Account;
+
+  @Input()
+  isEditing: boolean;
+
+  plans: TariffPlan[];
 
   @Output()
-  onAddAccount:EventEmitter<Account>;
+  onAddAccount: EventEmitter<Account>;
+
+  @Output()
+  onUpdateAccount: EventEmitter<Account>;
+
+  @Output()
+  onCancelEdit: EventEmitter<number>;
 
   constructor(
-    private planService:TariffPlanService
-  ) { 
+    private planService: TariffPlanService
+  ) {
     this.account = {
-      id:0,
-      mobileNumber:'',
-      planId:0
+      id: 0,
+      mobileNumber: '',
+      planId: 0
     };
 
+    this.isEditing = false;
     this.onAddAccount = new EventEmitter<Account>();
+    this.onUpdateAccount = new EventEmitter<Account>();
+    this.onCancelEdit = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
     this.planService.getAll().subscribe(
-      (data) => {this.plans=data;}
+      (data) => { this.plans = data; }
     );
   }
 
-  formSubmited(){
-    this.onAddAccount.emit(this.account);
-    this.account = {
-      id:0,
-      mobileNumber:'',
-      planId:0
-    };
+  formSubmited() {
+    if (this.isEditing) {
+      this.onUpdateAccount.emit(this.account);
+    } else {
+      this.onAddAccount.emit(this.account);
+      this.account = {id: 0,mobileNumber: '', planId: 0 };
+    }
+  }
+
+  cancelEdit() {
+    this.onCancelEdit.emit(this.account.id);
   }
 }
