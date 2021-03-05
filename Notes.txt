@@ -584,6 +584,38 @@ HttpClient
             delete(url)             Observable    
 
 
+    Modules
+    ----------------------------------
+        Root Module         app.module.ts
+                The entire application is held in root module
+
+        
+        Feature Module
+                Routing Feature Module
+                        is sued to isolate the Routing
+                        config of a root / domain Feature module
+
+                Domain Feature Module      
+                        represent one functinality of your application
+
+                        AdminModule
+                        ConsumerModule
+                        AccountModule
+                        TariffModule ...etc
+
+                        we can load these module whenever
+                        they ar needed ---- Lazy Loading...!
+
+                Service Feature Module
+                        holds the common 
+                        services requried by the entire application.
+
+                Shared Feature Module
+                        holds cusotm pipes/
+                        custom directive etc.. that
+                        are indenteded to be used in the entire app.
+                        
+                Widget Feature Module
 
 
 
