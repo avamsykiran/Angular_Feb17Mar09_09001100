@@ -1,5 +1,10 @@
 <section class="container-fluid p-4">
     <div class="col-sm-6 mx-auto">
+
+        <div class="alert bg-dark text-light" *ngIf="errMsg">
+            {{errMsg}}
+        </div>
+
         <form #f="ngForm" (ngSubmit)="login()">
             <div class="form-group">
                 <label>User Name:</label>

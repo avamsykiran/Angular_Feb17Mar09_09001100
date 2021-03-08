@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../model/user';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,8 @@ import { User } from '../model/user';
 export class LoginComponent implements OnInit {
 
   user:User;
-  constructor() { 
+  errMsg:string;
+  constructor(private userService:UserService,private router:Router) { 
     this.user=new User();
   }
 
@@ -17,6 +20,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
+    this.userService.login(this.user).subscribe(
+      (isloggedIn) => {
+        if(isloggedIn){
+          if(this.userService.getCurrentUser().role=="ADMIN"){
+            this.router.navigateByUrl("/admin");
+          }else{
+            this.router.navigateByUrl("/consumer");
+          }
+        }
+      },
+      (err) =>{this.errMsg=err;}
+    );
+
   }
 }
