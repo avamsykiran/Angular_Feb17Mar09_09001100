@@ -1,5 +1,10 @@
 {
-    "accounts":[
-        
-    ]
+  "accounts": [
+    {
+      "mobileNumber": "9055590555",
+      "planId": "102",
+      "consumerId": 1,
+      "accountId": 1
+    }
+  ]
 }

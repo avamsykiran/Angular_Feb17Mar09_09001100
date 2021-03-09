@@ -62,4 +62,13 @@ export class UserService {
         })
       );
   }
+
+  getNextUserId():Observable<number>{
+    return (
+      this.httpClient.get<User[]>(this.userApiUrl)
+      .pipe(        
+        map(users => users.length==0?1:(users[users.length-1].userId+1))
+      )
+    );
+  }
 }
